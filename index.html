@@ -1,78 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-<link rel="stylesheet" href="styles.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <title>Tasky</title>
-</head>
-<body>
+  </head>
+  <body>
     <!-- navbar -->
 
-      <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm p-2 mb-3 bg-body rounded">
-          <div class="container-fluid">
-            <h1 class="navbar-brand fw-bold mt-1">
-              <a href="#" class="text-decoration-none ">Tasky</a>
-            </h1>
-      
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+    <nav
+      class="
+        navbar navbar-expand-lg navbar-light
+        bg-light
+        shadow-sm
+        p-2
+        mb-3
+        bg-body
+        rounded
+      "
+    >
+      <div class="container-fluid">
+        <h1 class="navbar-brand fw-bold mt-1">
+          <a href="#" class="text-decoration-none">Tasky</a>
+        </h1>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+          </ul>
+          <form class="d-flex">
+            <button
+              class="btn btn-primary"
+              type="button"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
+              <i class="fas fa-plus"> </i>&nbsp; Add New
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-              </ul>
-              <form class="d-flex">
-                <button class="btn btn-primary" type="submit">  <i class="fas fa-plus"> </i>&nbsp; Add New</button>
-              </form>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"><i class="fas fa-clipboard-list"></i>&nbsp; Add New Task</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label"
+                  >Image Url</label
+                >
+                <input
+                  type="url"
+                  class="form-control"
+                  id="exampleInputEmail1"
+                  placeholder="https://example.com/hello.jpg"
+                  aria-describedby="emailHelp"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label"
+                  >Task Title</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="eg: API Integration"
+                  id="exampleInputPassword1"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label"
+                  >Task Type</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="eg: work"
+                  id="exampleInputPassword1"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label"
+                  >Task Description</label
+                >
+                <textarea
+                  type="text"
+                  class="form-control"
+                  placeholder="Describe your task in detail"
+                  id="exampleInputPassword1"
+                  rows="4"
+                 
+                ></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+          
+            <button type="button" class="btn btn-success" data-bs-dismiss="modal"> <i class="fas fa-tasks"></i> &nbsp; Add Task</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main class="fluid-container mx-4">
+      <div class="container mb-2">
+        <section class="mt-5">
+          <div class="row">
+            <div class="col-md-6 mx-auto">
+              <div class="input-group mb-3 shadow">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Search"
+                  aria-label="Search"
+                  aria-describedby="basic-addon2"
+                />
+                <span class="input-group-text btn-primary" id="basic-addon2"
+                  ><i class="fas fa-search"></i
+                ></span>
+              </div>
             </div>
           </div>
-        </nav>
-    <main class="fluid-container mx-4">
-      
-        <div class="container mb-2 ">
-          <section class="mt-5 ">
-            <div class="row ">
-              <div class=" col-md-6  mx-auto ">
-                <div class="input-group mb-3 shadow">
-                    <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
-                    <span class="input-group-text btn-primary" id="basic-addon2"><i class="fas fa-search"></i></span>
-      
-            </div>
-              </div>
-            </div>
-          </section>
-        </div>
-        <section class="row ">
-            <div class="col-lg-3 col-md-5 mb-2 ">
-              <div class="card ">
-                <div class="card-header  ">
-                  <button class="btn btn-outline-success "><i class="fas fa-edit"></i>&nbsp; Edit</button>
-                  <button class="btn btn-outline-danger float-end"><i class="fas fa-trash-alt"></i> &nbsp; Delete</button>
-                </div>
-                <img src="https://thumbs.dreamstime.com/b/white-stone-words-you-amazing-smile-face-color-glitter-boke-background-117350823.jpg" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title fw-bold">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <span class="badge bg-primary">Go somewhere</span>
-                </div>
-                <div class="card-footer text-muted ">
-                  <button class="btn btn-outline-primary float-end"><i class="fas fa-expand-alt"></i>&nbsp; Open Task</button>
-                </div>
-              </div>
-            </div>
-            
         </section>
+      </div>
+      <section class="row">
+        <div class="col-lg-3 col-md-5 mb-2">
+          <div class="card shadow">
+            <div class="card-header">
+              <button class="btn btn-outline-success">
+                <i class="fas fa-edit"></i>&nbsp; Edit
+              </button>
+              <button class="btn btn-outline-danger float-end">
+                <i class="fas fa-trash-alt"></i> &nbsp; Delete
+              </button>
+            </div>
+            <img
+              src="https://thumbs.dreamstime.com/b/white-stone-words-you-amazing-smile-face-color-glitter-boke-background-117350823.jpg"
+              class="card-img-top"
+              alt="..."
+            />
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Special title treatment</h5>
+              <p class="card-text">
+                With supporting text below as a natural lead-in to additional
+                content.
+              </p>
+              <span class="badge bg-primary">Go somewhere</span>
+            </div>
+            <div class="card-footer text-muted">
+              <button class="btn btn-outline-primary float-end">
+                <i class="fas fa-expand-alt"></i>&nbsp; Open Task
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
-      <script src="https://kit.fontawesome.com/9da7a7bca1.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/9da7a7bca1.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
