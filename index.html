@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="styles.css" />
     <title>Tasky</title>
   </head>
-  <body>
+  <body onload="loadInitialCard()">
     <!-- navbar -->
 
     <nav
@@ -147,7 +147,7 @@
         <section class="mt-5">
           <div class="row">
             <div class="col-md-6 mx-auto">
-              <div class="input-group mb-3 shadow">
+              <div class="input-group mb-3 shadow ">
                 <input
                   type="text"
                   class="form-control"
@@ -155,7 +155,7 @@
                   aria-label="Search"
                   aria-describedby="basic-addon2"
                 />
-                <span class="input-group-text btn-primary" id="basic-addon2"
+                <span class="input-group-text btn-primary " id="basic-addon2"
                   ><i class="fas fa-search"></i
                 ></span>
               </div>
