@@ -51,10 +51,9 @@ const deleteCard = (e) => {
   const getID = e.target.id;
 
   const tagname = e.target.tagName;
-  const filteredArray = globalStore.filter((obj) => obj.id !== getID);
+  globalStore = globalStore.filter((obj) => obj.id !== getID);
 
   
-  globalStore = filteredArray;
   localStorage.setItem("tasky", JSON.stringify({
     cards: globalStore
   }));
